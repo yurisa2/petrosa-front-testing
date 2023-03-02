@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Menu Teste</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <h1>Menu</h1>
+            </div>
+            <button onclick="abrirMenu()">&#9776;</button>
+            <ul id="botoesMenu">
+                <a href="#perfil">
+                    <li>
+                        <p>Perfil</p>
+                    </li>
+                </a>
+                <a href="#carrinho">
+                    <li>
+                        <p>Carrinho</p>
+                    </li>
+                </a>
+                <a href="#favoritos">
+                    <li>
+                        <p>Favoritos</p>
+                    </li>
+                </a>
+                <a href="#sair">
+                    <li>
+                        <p>Sair</p>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+
+        <div class="content" id="perfil" style="background-color: gray"> 
+            <div class="height-nav"></div>
+            Perfil 
+        </div>
+        <div class="content" id="carrinho" style="background-color: gray"> 
+            <div class="height-nav"></div>
+            Carrinho 
+        </div>
+        <div class="content" id="favoritos" style="background-color: gray"> 
+            <div class="height-nav"></div>
+            Favoritos 
+        </div>
+        <div class="content" id="sair" style="background-color: gray"> 
+            <div class="height-nav"></div>
+            Sair 
+        </div>
+
+        <script>
+            const arrayHeight = document.getElementsByClassName('height-nav');
+            const navHeight = document.getElementsByTagName('nav')[0].clientHeight;
+
+            for (let navHeightObj of arrayHeight)
+                navHeightObj.style.height = navHeight + 'px';
+
+            function abrirMenu() {
+                const botoesMenu = document.getElementById('botoesMenu');
+
+                botoesMenu.className = botoesMenu.className.includes('Menu') ? '' : 'Menu'
+            }
+        </script>
+    </body>
+</html>
